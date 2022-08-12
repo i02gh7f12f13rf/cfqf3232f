@@ -1,0 +1,8 @@
+local stopKICK
+stopKICK = hookmetamethod(game,"__namecall",function(self,...)
+    local ncm = getnamecallmethod()
+    if ncm == "BreakJoints" then
+        return "donkey"
+    end
+    return stopKICK(self,...)
+end)
